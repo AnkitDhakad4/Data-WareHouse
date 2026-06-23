@@ -62,7 +62,7 @@ BEGIN
 		prd_id,
 		prd_nm ,
 		REPLACE(SUBSTRING(prd_key,1,5),'-','_') as cat_id,
-		REPLACE(SUBSTRING(prd_key,7,LEN(prd_key)),'-','_') as prd_id,
+		REPLACE(SUBSTRING(prd_key,7,LEN(prd_key)),'_','-') as prd_id,
 		ISNULL(prd_cost,0) as prd_cost,
 		CASE UPPER(TRIM(prd_line))
 			WHEN 'M' THEN 'Moutain'
